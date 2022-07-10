@@ -1,0 +1,21 @@
+README
+
+Covid sucks. Especialy when you have a family and need to isolate no to get them sick. That happened to me. Good part - I had crazy useless idea...
+
+Few days back intern that we got for my team was idling with proejct that originaly he was working on and we threw him on deep water - figure out some segmentation models that we could try it instead of object detection. I got him hooked up with very good tutorial how to build and train U-Net segmentation model and he suceeded! Well... As a side item I was curius how segentation model works under the hood. Did some reading, analyzed simple code and... got sick with Covid. When being prisoned in my room (in Alabama at this time it was 37C outside) I worked a little bit, watched all Netflix shows I was interested in, played No Mans Sky and got crazy idea... Why don;t I try to train U-Net network to gor from color images to grayscale. Yes, I knew it will not work with the dataset I can have, but I was wondering what crazy image I could get... And here we go, results in this repo :D
+
+
+to build container use:
+docker build -f Dockerfile.<MOD_NAME> -t <NAME> .
+
+to run container use:
+docker run -v ${PWD}:/usr/src/app -it <NAME>
+
+run and build:
+docker build -f Dockerfile.<MOD_NAME> -t <NAME> . && docker run -v ${PWD}:/usr/src/app -it <NAME>
+
+
+Run a single Python script
+For many simple, single file projects, you may find it inconvenient to write a complete Dockerfile. In such cases, you can run a Python script by using the Python Docker image directly:
+
+$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp python:3 python your-daemon-or-script.py

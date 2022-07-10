@@ -1,0 +1,12 @@
+FROM python:3
+
+WORKDIR /usr/src
+RUN wget https://bootstrap.pypa.io/pip/3.5/get-pip.py && python3 get-pip.py
+
+WORKDIR /usr/src/build
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+WORKDIR /usr/src/app
+CMD ["python"]
