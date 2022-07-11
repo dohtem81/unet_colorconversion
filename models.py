@@ -14,11 +14,10 @@ import tensorflow as tf
 
 IMG_WIDTH = 512
 IMG_HEIGHT = 512
-IMG_CHANNELS = 3
 
-def unet(pretrained_model = None):
+def unet(pretrained_model = None, input_channel = 3, output_channnels = 1):
     #Build the model
-    inputs = tf.keras.layers.Input((IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS))
+    inputs = tf.keras.layers.Input((IMG_HEIGHT, IMG_WIDTH, input_channel))
     s = tf.keras.layers.Lambda(lambda x: x / 255)(inputs)
 
     #Contraction path
@@ -71,10 +70,10 @@ def unet(pretrained_model = None):
     c9 = tf.keras.layers.Dropout(0.1)(c9)
     c9 = tf.keras.layers.Conv2D(16, (3, 3), activation='relu', kernel_initializer='he_normal', padding='same')(c9)
     
-    outputs = tf.keras.layers.Conv2D(1, (1, 1), activation='sigmoid')(c9)
+    outputs = tf.keras.layers.Conv2D(output_channnels, (1, 1), activation='sigmoid')(c9)
     
     model = tf.keras.Model(inputs=[inputs], outputs=[outputs])
-    model.compile(optimizer=tf.keras.optimizers.SGD(learning_rate=0.02), loss='mean_squared_error', metrics=['accuracy'])
+    model.compile(optimizer=tf.keras.optimizers.SGD(learning_rate=0.125), loss='mean_squared_error', metrics=['accuracy'])
     #model.summary()
 
     if pretrained_model:
