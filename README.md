@@ -20,3 +20,19 @@ https://www.linkedin.com/posts/piotr-pedziwiatr_machinelearning-video-creativity
 https://www.linkedin.com/posts/piotr-pedziwiatr_ai-software-covid-activity-6972440328993730561-0uvh?utm_source=share&utm_medium=member_desktop
 
 https://www.linkedin.com/posts/piotr-pedziwiatr_ai-software-covid-activity-6972019922524663808-Wzh0?utm_source=share&utm_medium=member_desktop
+
+<h2>How to replicate</h2>
+To build container use:
+docker build -f Dockerfile.<MOD_NAME> -t <NAME> .
+
+to run container use:
+docker run -v ${PWD}:/usr/src/app -it <NAME>
+
+run and build:
+docker build -f Dockerfile.<MOD_NAME> -t <NAME> . && docker run -v ${PWD}:/usr/src/app -it <NAME>
+
+
+Run a single Python script
+For many simple, single file projects, you may find it inconvenient to write a complete Dockerfile. In such cases, you can run a Python script by using the Python Docker image directly:
+
+$ docker run -it --rm --name my-running-script -v "$PWD":/usr/src/myapp -w /usr/src/myapp python:3 python your-daemon-or-script.py
