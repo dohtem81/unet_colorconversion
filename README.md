@@ -16,5 +16,7 @@ I'm using Macbook Pro with AMD GPU and I was able to find article how to use for
 
 These are results:] of feeding grayscale images to the model and getting out of it RGB ones (first link is coolest one):
 https://www.linkedin.com/posts/piotr-pedziwiatr_machinelearning-video-creativity-activity-6978247420883202048-U8Rt?utm_source=share&utm_medium=member_desktop
+
 https://www.linkedin.com/posts/piotr-pedziwiatr_ai-software-covid-activity-6972440328993730561-0uvh?utm_source=share&utm_medium=member_desktop
+
 https://www.linkedin.com/posts/piotr-pedziwiatr_ai-software-covid-activity-6972019922524663808-Wzh0?utm_source=share&utm_medium=member_desktop
