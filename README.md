@@ -1,3 +1,6 @@
+![image](https://github.com/dohtem81/unet_colorconversion/assets/8992343/7f8a93ea-6440-4af1-8147-73c220fff46b)
+
+
 <h1>Set of interesting experiments</h1>
 There are 2 models- gray to color and color to gray. To be honest these models should not be commited here, but they ended up here.
 
